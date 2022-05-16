@@ -156,7 +156,10 @@ export default function Header() {
     router.pathname === '/reset-pw' ||
     router.pathname === '/course' ||
     router.pathname.includes('/course/detail') ||
-    router.pathname.includes('/mypage');
+    router.pathname.includes('/mypage') ||
+    router.pathname === '/privacy-policy' ||
+    router.pathname === '/service-policy' ||
+    router.pathname === '/email-policy';
 
   const handleLogout = async () => {
     await axios.post('/api/logout');
