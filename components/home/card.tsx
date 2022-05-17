@@ -18,7 +18,7 @@ export default function Card() {
     boardApi.getCardNewsList(locale, '1', '전체')
   );
   const slider = useRef<Slider | null>(null);
-  const [activeSlide, setActiveSlide] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(1);
   const [progressBar, setProgressBar] = useState(0);
 
   const settings = {
@@ -28,8 +28,8 @@ export default function Card() {
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: false,
-    afterChange: (index: number) => {
-      setActiveSlide(index);
+    beforeChange: (current: number, next: number) => {
+      setActiveSlide(next + 1);
       setProgressBar(0);
     },
     responsive: [
@@ -153,7 +153,7 @@ export default function Card() {
                       alt='Card News Thumbnail'
                       layout='fill'
                       objectFit='cover'
-                      priority
+                      // priority
                       className='rounded-lg'
                     />
                   </div>
