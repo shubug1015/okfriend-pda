@@ -1,3 +1,4 @@
+import { useLocale } from '@libs/client/useLocale';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -21,6 +22,7 @@ export default function Course({
   courseCategory,
   url,
 }: IProps) {
+  const { text } = useLocale();
   const router = useRouter();
   const goDetail = () => {
     if (courseCategory === 'live') {
@@ -44,7 +46,7 @@ export default function Course({
       </div>
 
       <div className='flex justify-end pt-3.5 pr-3.5'>
-        <div className='flex aspect-square w-7 items-center justify-center rounded-full bg-[#ff6161] pl-0.5'>
+        <div className='flex aspect-square w-7 items-center justify-center rounded-full bg-[#d60a51] pl-0.5'>
           <svg
             width='9'
             height='10'

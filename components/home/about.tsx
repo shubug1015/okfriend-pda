@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import BgImg from '@public/home/about-bg.png';
+// import Image from 'next/image';
+// import BgImg from '@public/home/about-bg.png';
 import Layout from '@layouts/sectionLayout';
 import { useEffect } from 'react';
 import AOS from 'aos';
@@ -12,8 +12,8 @@ export default function About() {
     AOS.init({ once: true });
   }, []);
   return (
-    <div className='relative flex w-screen justify-center py-[5.812rem] md:py-12'>
-      <div className='absolute top-0 left-0 -z-[1] h-full w-full'>
+    <div className='relative flex w-screen justify-center bg-[#cffdff] py-[5.812rem] md:py-12'>
+      {/* <div className='absolute top-0 left-0 -z-[1] h-full w-full'>
         <Image
           src={BgImg}
           alt='About Us Background'
@@ -21,10 +21,10 @@ export default function About() {
           objectFit='cover'
           placeholder='blur'
         />
-      </div>
+      </div> */}
 
       <Layout>
-        <div className='flex flex-col items-center text-white'>
+        <div className='flex flex-col items-center'>
           <div
             data-aos='flip-down'
             data-aos-duration='1500'

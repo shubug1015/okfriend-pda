@@ -9,6 +9,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useLocale } from '@libs/client/useLocale';
 import Layout from '@layouts/sectionLayout';
+import { MainLogo } from '@components/svg';
 
 export default function Slide() {
   const { text } = useLocale();
@@ -67,7 +68,7 @@ export default function Slide() {
         {slide.map((i) => (
           <div
             key={i.id}
-            className='relative !flex h-[52.25rem] w-screen flex-col justify-center text-white md:h-[25.125rem]'
+            className='relative !flex h-[52.25rem] w-screen flex-col justify-center text-white md:h-[25.125rem] md:justify-start'
           >
             <div className='absolute -z-[1] h-full w-full'>
               <div className='relative h-full w-full'>
@@ -86,6 +87,14 @@ export default function Slide() {
                 data-aos='fade-up'
                 data-aos-duration='1500'
                 data-aos-delay='300'
+                className='md:pt-12'
+              >
+                <MainLogo />
+              </div>
+              {/* <div
+                data-aos='fade-up'
+                data-aos-duration='1500'
+                data-aos-delay='300'
                 className='whitespace-pre-wrap font-quicksand text-[5rem] font-bold leading-none drop-shadow-md md:text-[2.5rem]'
               >
                 {i.title}
@@ -98,7 +107,7 @@ export default function Slide() {
                 className='mt-6 text-2xl font-bold drop-shadow-md md:text-xl'
               >
                 {i.text}
-              </div>
+              </div> */}
             </Layout>
           </div>
         ))}

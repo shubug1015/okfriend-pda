@@ -26,6 +26,7 @@ export default function Banner({ title, navList }: IProps) {
           layout='fill'
           objectFit='cover'
           placeholder='blur'
+          quality={100}
         />
       </div>
 

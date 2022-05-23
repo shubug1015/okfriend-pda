@@ -154,6 +154,7 @@ export default function Header() {
     router.pathname === '/signup' ||
     router.pathname === '/find-id' ||
     router.pathname === '/reset-pw' ||
+    router.pathname.includes('/course-introduction') ||
     router.pathname === '/course' ||
     router.pathname.includes('/course/detail') ||
     router.pathname.includes('/mypage') ||
@@ -178,9 +179,9 @@ export default function Header() {
           <div className='flex items-center space-x-6'>
             {/* SNS 버튼 */}
             <div className='flex items-center space-x-6 md:hidden'>
-              <Instagram />
-              <Facebook />
-              <Youtube />
+              {/* <Instagram /> */}
+              <Facebook color='#9E9E9E' />
+              <Youtube color='#9E9E9E' />
             </div>
             {/* SNS 버튼 */}
           </div>
@@ -276,7 +277,7 @@ export default function Header() {
           <div className='flex w-1/4 justify-end space-x-2.5 md:hidden'>
             {data?.token && data?.profile ? (
               <>
-                <Link href='/mypage/course/1'>
+                <Link href='/mypage/course/ongoing/1'>
                   <a className='rounded-full border border-[#2fb6bc] px-10 py-3 font-bold text-[#2fb6bc]'>
                     {text.header['7']}
                   </a>

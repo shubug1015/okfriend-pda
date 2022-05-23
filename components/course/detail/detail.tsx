@@ -128,9 +128,9 @@ export default function Detail({
                 ref={videoPlayerRef}
                 playsInline
                 controls
-                className='h-full w-full'
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
+                className='h-full w-full'
               >
                 <source src={data?.url} />
               </video>
@@ -154,7 +154,7 @@ export default function Detail({
             <div className='flex'>
               <div
                 className={cls(
-                  category === 'live' ? 'bg-[#f6a500]' : 'bg-[#ff6161]',
+                  category === 'live' ? 'bg-[#f6a500]' : 'bg-[#d60a51]',
                   'flex h-[1.875rem] items-center justify-center rounded-md px-3 text-xs font-bold text-white'
                 )}
               >
@@ -189,7 +189,7 @@ export default function Detail({
             <div className='mt-8 space-y-3 md:mt-6'>
               {isRegistered ? (
                 <div className='flex h-[3.625rem] items-center justify-center rounded-lg bg-[#01111e] font-bold text-white'>
-                  {text.courseDetail['5']}
+                  {survey ? '수강 완료' : text.courseDetail['5']}
                 </div>
               ) : (
                 <div
@@ -288,14 +288,14 @@ export default function Detail({
         {/* 진행률 */}
         {isRegistered && (
           <div className='mt-5 flex w-[44.688rem] items-center space-x-4 md:mt-8 md:w-full md:flex-col md:items-start md:space-x-0 md:space-y-4'>
-            <div className='flex h-9 w-24 items-center justify-center rounded-lg border border-[#ff6161] text-lg font-bold text-[#ff6161]'>
+            <div className='flex h-9 w-24 items-center justify-center rounded-lg border border-[#d60a51] text-lg font-bold text-[#d60a51]'>
               {text.courseDetail['10']}
             </div>
 
             <div className='h-3 grow rounded-full bg-[#d6d6d6] md:h-2 md:w-full'>
               <div
-                className='h-3 rounded-full bg-[#ff6161] md:h-2'
-                style={{ width: `${progress}%` }}
+                className='h-3 rounded-full bg-[#d60a51] md:h-2'
+                style={{ width: completed ? '100%' : `${progress}%` }}
               />
             </div>
           </div>

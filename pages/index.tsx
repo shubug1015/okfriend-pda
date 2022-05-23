@@ -1,7 +1,7 @@
 import About from '@components/home/about';
-import Card from '@components/home/card';
+// import Card from '@components/home/card';
 import Contact from '@components/home/contact';
-import Course from '@components/home/course';
+// import Course from '@components/home/course';
 import Notice from '@components/home/notice';
 // import Partner from '@components/home/partner';
 import Slide from '@components/home/slide';
@@ -15,8 +15,8 @@ const Home: NextPage = () => {
       <Slide />
       <About />
       <Notice />
-      <Course />
-      <Card />
+      {/* <Course /> */}
+      {/* <Card /> */}
       <Contact />
       {/* <Partner /> */}
     </>
