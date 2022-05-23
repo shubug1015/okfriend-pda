@@ -148,19 +148,20 @@ export default function Header() {
     },
   ];
 
-  const isWhiteBg =
-    router.pathname === '/' ||
-    router.pathname === '/login' ||
-    router.pathname === '/signup' ||
-    router.pathname === '/find-id' ||
-    router.pathname === '/reset-pw' ||
-    router.pathname.includes('/course-introduction') ||
-    router.pathname === '/course' ||
-    router.pathname.includes('/course/detail') ||
-    router.pathname.includes('/mypage') ||
-    router.pathname === '/privacy-policy' ||
-    router.pathname === '/service-policy' ||
-    router.pathname === '/email-policy';
+  // const isWhiteBg =
+  //   router.pathname === '/' ||
+  //   router.pathname === '/login' ||
+  //   router.pathname === '/signup' ||
+  //   router.pathname === '/find-id' ||
+  //   router.pathname === '/reset-pw' ||
+  //   router.pathname.includes('/course-introduction') ||
+  //   router.pathname === '/course' ||
+  //   router.pathname.includes('/course/detail') ||
+  //   router.pathname.includes('/mypage') ||
+  //   router.pathname === '/privacy-policy' ||
+  //   router.pathname === '/service-policy' ||
+  //   router.pathname === '/email-policy';
+  const isWhiteBg = true;
 
   const handleLogout = async () => {
     await axios.post('/api/logout');
