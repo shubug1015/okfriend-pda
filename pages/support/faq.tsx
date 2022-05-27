@@ -81,26 +81,6 @@ const Faq: NextPage = () => {
       question: text.faq['19'],
       answer: text.faq['20'],
     },
-    {
-      id: 10,
-      question: text.faq['21'],
-      answer: text.faq['22'],
-    },
-    {
-      id: 11,
-      question: text.faq['23'],
-      answer: text.faq['24'],
-    },
-    {
-      id: 12,
-      question: text.faq['25'],
-      answer: text.faq['26'],
-    },
-    {
-      id: 13,
-      question: text.faq['27'],
-      answer: text.faq['28'],
-    },
   ];
 
   const [openedFaq, setOpenedFaq] = useState(0);

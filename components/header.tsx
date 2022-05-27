@@ -92,10 +92,10 @@ export default function Header() {
       url: '/course-introduction/greeting',
       isActivated: router.pathname.includes('/course-introduction'),
       subUrls: [
-        {
-          label: text.header['1-1'],
-          url: '/course-introduction/greeting',
-        },
+        // {
+        //   label: text.header['1-1'],
+        //   url: '/course-introduction/greeting',
+        // },
         {
           label: text.header['1-2'],
           url: '/course-introduction/summary',

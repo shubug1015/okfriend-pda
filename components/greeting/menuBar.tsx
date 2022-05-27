@@ -10,7 +10,7 @@ export default function MenuBar({ pageName }: IProps) {
   const { text } = useLocale();
   return (
     <div className='flex items-center justify-center border-b border-[#ebebeb] bg-white text-[1.375rem] text-[#9e9e9e] md:border-transparent md:text-base'>
-      <Link href='/course-introduction/greeting'>
+      {/* <Link href='/course-introduction/greeting'>
         <a>
           <div
             className={cls(
@@ -23,7 +23,7 @@ export default function MenuBar({ pageName }: IProps) {
             인사말
           </div>
         </a>
-      </Link>
+      </Link> */}
 
       <Link href='/course-introduction/summary'>
         <a>

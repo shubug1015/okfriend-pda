@@ -29,7 +29,7 @@ export default function Header() {
       </div>
 
       <div className='flex translate-y-[4.5rem] space-x-5 md:mt-8 md:translate-y-0 md:flex-col md:space-x-0 md:space-y-2.5'>
-        <div className='flex h-36 w-[48.75rem] flex-col justify-between rounded bg-white py-7 px-12 shadow-md md:h-[4.25rem] md:w-full md:flex-row md:items-center md:py-0 md:px-6'>
+        <div className='flex h-36 w-full flex-col justify-between rounded bg-white py-7 px-12 shadow-md md:h-[4.25rem] md:w-full md:flex-row md:items-center md:py-0 md:px-6'>
           <div className='text-[1.75rem] font-bold md:text-xl'>
             {data?.profile?.name}님
           </div>
@@ -57,7 +57,7 @@ export default function Header() {
           </Link>
         </div>
 
-        <div className='flex h-36 grow items-center justify-between rounded bg-white shadow-md md:h-[6.313rem] md:w-full'>
+        {/* <div className='flex h-36 grow items-center justify-between rounded bg-white shadow-md md:h-[6.313rem] md:w-full'>
           <div className='flex w-full flex-col justify-between px-7'>
             <div className='flex justify-between'>
               <div className='font-bold md:text-[0.938rem]'>
@@ -90,7 +90,7 @@ export default function Header() {
               {data?.profile?.total_mileage.toLocaleString()}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );

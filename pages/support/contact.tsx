@@ -170,7 +170,7 @@ const Contact: NextPage = () => {
                     >
                       <option value='default'>{text.contact['10']}</option>
                       <option>{text.contact['11']}</option>
-                      <option>{text.contact['12']}</option>
+                      {/* <option>{text.contact['12']}</option> */}
                       <option>{text.contact['13']}</option>
                       <option>{text.contact['14']}</option>
                     </select>
