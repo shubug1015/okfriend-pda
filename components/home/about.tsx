@@ -37,15 +37,20 @@ export default function About() {
             data-aos='fade-up'
             data-aos-duration='1500'
             data-aos-delay='300'
-            className='mt-5 flex flex-col items-center whitespace-pre-wrap text-[1.625rem] md:hidden'
+            className='mt-5 whitespace-pre-wrap text-center text-[1.625rem] md:hidden'
           >
-            <div>{text.main['2']}</div>
-            <div className='font-bold text-[#31b7bc]'>{text.main['3']}</div>
+            <div>
+              {text.main['2']}
+              <span className='font-bold text-[#31b7bc]'>
+                {' '}
+                {text.main['3']}
+              </span>
+            </div>
           </div>
 
           <div className='mt-4 hidden text-center text-base md:block'>
-            {text.main['1']}{' '}
-            <span className='font-bold text-[#31b7bc]'>{text.main['2']}</span>
+            {text.main['2']}{' '}
+            <span className='font-bold text-[#31b7bc]'>{text.main['3']}</span>
           </div>
         </div>
       </Layout>

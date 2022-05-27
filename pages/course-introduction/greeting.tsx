@@ -9,7 +9,7 @@ const Greeting: NextPage = () => {
   const { text } = useLocale();
   return (
     <>
-      <SEO title='온라인연수 소개' />
+      <SEO title='공공외교 아카데미 소개' />
       <Banner
         title={text.greeting['1']}
         navList={[text.greeting['2'], text.greeting['3']]}

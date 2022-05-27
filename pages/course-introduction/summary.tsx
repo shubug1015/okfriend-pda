@@ -25,7 +25,7 @@ const Greeting: NextPage = () => {
   const { locale, text } = useLocale();
   return (
     <>
-      <SEO title='온라인연수 소개' />
+      <SEO title='공공외교 아카데미 소개' />
       <Banner
         title={text.summary['1']}
         navList={[text.summary['2'], text.summary['3']]}
