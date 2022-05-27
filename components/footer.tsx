@@ -40,14 +40,14 @@ export default function Footer() {
               </a>
             </Link>
 
-            <div className='text-sm text-[#9e9e9e]'>|</div>
+            <div className='text-sm text-white'>|</div>
             <Link href='/email-policy'>
               <a>
                 <div className='text-white'>{text.footer['4']}</div>
               </a>
             </Link>
 
-            <div className='text-sm text-[#9e9e9e]'>|</div>
+            <div className='text-sm text-white'>|</div>
             <Link href='/privacy-policy'>
               <a>
                 <div className='text-white'>{text.footer['5']}</div>
