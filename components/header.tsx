@@ -89,7 +89,7 @@ export default function Header() {
     {
       id: 0,
       title: text.header['1'],
-      url: '/course-introduction/greeting',
+      url: '/course-introduction/summary',
       isActivated: router.pathname.includes('/course-introduction'),
       subUrls: [
         // {
