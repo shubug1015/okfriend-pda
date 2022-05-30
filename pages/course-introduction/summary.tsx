@@ -114,7 +114,7 @@ const Greeting: NextPage = () => {
         </div>
 
         {/* 연수대상 */}
-        <div className='text- border-b border-[#e8e8e8] pt-[3.094rem] pb-[2.719rem] text-2xl text-[#01111e] md:pb-[1.906rem] md:pt-[1.969rem] md:text-xl'>
+        {/* <div className='text- border-b border-[#e8e8e8] pt-[3.094rem] pb-[2.719rem] text-2xl text-[#01111e] md:pb-[1.906rem] md:pt-[1.969rem] md:text-xl'>
           <div className='flex items-center font-bold leading-[2.25rem] md:block'>
             <span className='font-nexonBold'>{text.summary['11']}</span>
             <span className='ml-[0.813rem] text-[1.063rem] font-normal leading-[1.753rem] text-[#6b6b6b] md:hidden md:text-[0.875rem] md:leading-[1.444rem]'>
@@ -168,7 +168,7 @@ const Greeting: NextPage = () => {
           <div className='mt-[1.438rem] whitespace-pre-wrap text-base leading-[1.65rem] md:mt-[0.75rem] md:text-[0.875rem] md:leading-[1.444rem]'>
             {text.summary['20']}
           </div>
-        </div>
+        </div> */}
 
         {/* 연수방식 */}
         <div className='border-b border-[#e8e8e8] pt-[2.969rem] pb-[2.531rem] text-2xl text-[#01111e] md:pt-[1.406rem] md:text-xl'>
@@ -181,14 +181,14 @@ const Greeting: NextPage = () => {
         </div>
 
         {/* 연수기간 */}
-        <div className='border-b border-[#e8e8e8] pt-[2.969rem] pb-[2.531rem] text-2xl text-[#01111e] md:pt-[1.406rem] md:text-xl'>
+        {/* <div className='border-b border-[#e8e8e8] pt-[2.969rem] pb-[2.531rem] text-2xl text-[#01111e] md:pt-[1.406rem] md:text-xl'>
           <div className='font-nexonBold font-bold leading-[2.25rem]'>
             2022 재외동포대학생(온라인) 연수 기간
           </div>
           <div className='mt-4 text-[1.125rem] leading-[1.856rem] md:mt-[0.313rem] md:text-[0.875rem]'>
             -2022년 6월 중
           </div>
-        </div>
+        </div> */}
 
         {/* 2022 재외동포대학생모국연수(온라인) */}
         {/* <div className='border-b border-[#e8e8e8] pt-[2.906rem] pb-[2.531rem] text-2xl text-[#01111e] md:pt-[1.906rem] md:text-xl'>
