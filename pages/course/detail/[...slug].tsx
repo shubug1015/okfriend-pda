@@ -25,8 +25,8 @@ const CourseDetail: NextPage<IProps> = ({ slug }) => {
   const [, category, id] = slug;
   const { data, mutate } = useSWR(
     myData?.token
-      ? `${locale}/courseDetail/logged`
-      : `${locale}/courseDetail/unlogged`,
+      ? `${locale}/courseDetail/${id}/logged`
+      : `${locale}/courseDetail/${id}/unlogged`,
     () => courseApi.detail(locale, id, myData?.token)
   );
   const courseData = data?.lecture || data;
