@@ -10,7 +10,7 @@ import { useLocale } from '@libs/client/useLocale';
 import { IUser, useUser } from '@libs/client/useUser';
 import { cls, clsFilter } from '@libs/client/utils';
 import type { GetServerSidePropsContext, NextPage } from 'next';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 import { useState } from 'react';
 import useSWR from 'swr';
 
