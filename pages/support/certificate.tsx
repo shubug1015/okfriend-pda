@@ -101,21 +101,12 @@ const Certificate: NextPage = () => {
   };
 
   // useEffect(() => {
-  //   if (profile?.survey) {
-  //     setPopup(true);
+  //   if (data === 'there are uncompleted lectures') {
+  //     alert('미완료된 강의가 있습니다.');
+  //     router.back();
   //   }
-  // }, [profile?.survey]);
+  // }, [data]);
 
-  // if (data === 'there are uncompleted lectures') {
-  //   alert('미완료된 강의가 있습니다.');
-  //   router.back();
-  // }
-  useEffect(() => {
-    if (data === 'there are uncompleted lectures') {
-      alert('미완료된 강의가 있습니다.');
-      router.back();
-    }
-  }, [data]);
   return (
     <>
       <SEO title='지원센터' />
@@ -164,10 +155,10 @@ const Certificate: NextPage = () => {
 
               <div className='space-y-5 md:w-full md:justify-between'>
                 {[
-                  text.certificate['16'],
-                  text.certificate['17'],
-                  text.certificate['18'],
-                  text.certificate['19'],
+                  // text.certificate['16'],
+                  // text.certificate['17'],
+                  // text.certificate['18'],
+                  // text.certificate['19'],
                   text.certificate['20'],
                 ].map((i) => (
                   <div key={i} className='flex items-center space-x-4'>
@@ -206,156 +197,156 @@ const Certificate: NextPage = () => {
             </div>
             {/* 문항 1 */}
 
-            {/* 문항 2 */}
-            <div className='space-y-7 border-b border-dotted border-[#d6d6d6] py-12 md:h-[19rem] md:flex-col md:justify-center md:space-y-6 md:py-4'>
-              <div className='text-xl font-medium md:text-sm md:font-bold md:leading-6 md:tracking-tighter'>
-                {text.certificate['21']}{' '}
-                <span className='text-[#2fb6bc]'>*</span>
-              </div>
+            {/*/!* 문항 2 *!/*/}
+            {/*<div className='space-y-7 border-b border-dotted border-[#d6d6d6] py-12 md:h-[19rem] md:flex-col md:justify-center md:space-y-6 md:py-4'>*/}
+            {/*  <div className='text-xl font-medium md:text-sm md:font-bold md:leading-6 md:tracking-tighter'>*/}
+            {/*    {text.certificate['21']}{' '}*/}
+            {/*    <span className='text-[#2fb6bc]'>*</span>*/}
+            {/*  </div>*/}
 
-              <div className='space-y-5 md:w-full md:justify-between'>
-                {[
-                  text.certificate['22'],
-                  text.certificate['23'],
-                  text.certificate['24'],
-                  text.certificate['25'],
-                  text.certificate['26'],
-                ].map((i, index) => (
-                  <div key={i} className='flex items-center space-x-4'>
-                    <input
-                      type='radio'
-                      value={index + 1}
-                      {...register('Q2', {
-                        required: '항목을 선택해주세요',
-                      })}
-                      className={cls(
-                        errors?.Q2?.message
-                          ? 'bg-[url("/icons/checked-error.png")]'
-                          : 'bg-[url("/icons/unchecked.png")] checked:bg-[url("/icons/checked.png")]',
-                        'h-2.5 w-3.5 cursor-pointer appearance-none bg-cover bg-no-repeat outline-none md:bg-contain'
-                      )}
-                    />
+            {/*  <div className='space-y-5 md:w-full md:justify-between'>*/}
+            {/*    {[*/}
+            {/*      text.certificate['22'],*/}
+            {/*      text.certificate['23'],*/}
+            {/*      text.certificate['24'],*/}
+            {/*      text.certificate['25'],*/}
+            {/*      text.certificate['26'],*/}
+            {/*    ].map((i, index) => (*/}
+            {/*      <div key={i} className='flex items-center space-x-4'>*/}
+            {/*        <input*/}
+            {/*          type='radio'*/}
+            {/*          value={index + 1}*/}
+            {/*          {...register('Q2', {*/}
+            {/*            required: '항목을 선택해주세요',*/}
+            {/*          })}*/}
+            {/*          className={cls(*/}
+            {/*            errors?.Q2?.message*/}
+            {/*              ? 'bg-[url("/icons/checked-error.png")]'*/}
+            {/*              : 'bg-[url("/icons/unchecked.png")] checked:bg-[url("/icons/checked.png")]',*/}
+            {/*            'h-2.5 w-3.5 cursor-pointer appearance-none bg-cover bg-no-repeat outline-none md:bg-contain'*/}
+            {/*          )}*/}
+            {/*        />*/}
 
-                    <div className='text-lg md:text-sm'>{i}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            {/* 문항 2 */}
+            {/*        <div className='text-lg md:text-sm'>{i}</div>*/}
+            {/*      </div>*/}
+            {/*    ))}*/}
+            {/*  </div>*/}
+            {/*</div>*/}
+            {/*/!* 문항 2 *!/*/}
 
-            {/* 문항 3~9 */}
-            {useList().map((i) => (
-              <div key={i.id} className='mt-14 md:mt-4'>
-                <div className='text-xl font-medium md:text-sm md:font-bold md:tracking-tighter'>
-                  {i.title} <span className='text-[#2fb6bc]'>*</span>
-                </div>
+            {/*/!* 문항 3~9 *!/*/}
+            {/*{useList().map((i) => (*/}
+            {/*  <div key={i.id} className='mt-14 md:mt-4'>*/}
+            {/*    <div className='text-xl font-medium md:text-sm md:font-bold md:tracking-tighter'>*/}
+            {/*      {i.title} <span className='text-[#2fb6bc]'>*</span>*/}
+            {/*    </div>*/}
 
-                <div className='mt-6 flex justify-between md:mt-2'>
-                  <div className='text-sm font-medium text-[#2fb6bc] md:hidden md:text-xs'>
-                    {text.certificate['28']}
-                  </div>
+            {/*    <div className='mt-6 flex justify-between md:mt-2'>*/}
+            {/*      <div className='text-sm font-medium text-[#2fb6bc] md:hidden md:text-xs'>*/}
+            {/*        {text.certificate['28']}*/}
+            {/*      </div>*/}
 
-                  <div className='flex space-x-5 md:hidden'>
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
-                      <div
-                        key={i}
-                        className='flex w-6 justify-center text-sm font-medium text-[#6b6b6b]'
-                      >
-                        {i}
-                      </div>
-                    ))}
-                  </div>
-                </div>
+            {/*      <div className='flex space-x-5 md:hidden'>*/}
+            {/*        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (*/}
+            {/*          <div*/}
+            {/*            key={i}*/}
+            {/*            className='flex w-6 justify-center text-sm font-medium text-[#6b6b6b]'*/}
+            {/*          >*/}
+            {/*            {i}*/}
+            {/*          </div>*/}
+            {/*        ))}*/}
+            {/*      </div>*/}
+            {/*    </div>*/}
 
-                {i.list.map((j) => (
-                  <Checkbox
-                    key={j.id}
-                    question={j.question}
-                    register={register(j.num, {
-                      required: '항목을 선택해주세요',
-                    })}
-                    error={errors[j.num]?.message}
-                  >
-                    {j.question === text.certificate['69'] && (
-                      <input
-                        type='text'
-                        {...register('Q8_5_etc')}
-                        className='h-10 w-[28rem] rounded-lg border border-[#d6d6d6] px-2.5 outline-none md:w-full md:text-sm'
-                      />
-                    )}
-                  </Checkbox>
-                ))}
-              </div>
-            ))}
-            {/* 문항 3~9 */}
+            {/*    {i.list.map((j) => (*/}
+            {/*      <Checkbox*/}
+            {/*        key={j.id}*/}
+            {/*        question={j.question}*/}
+            {/*        register={register(j.num, {*/}
+            {/*          required: '항목을 선택해주세요',*/}
+            {/*        })}*/}
+            {/*        error={errors[j.num]?.message}*/}
+            {/*      >*/}
+            {/*        {j.question === text.certificate['69'] && (*/}
+            {/*          <input*/}
+            {/*            type='text'*/}
+            {/*            {...register('Q8_5_etc')}*/}
+            {/*            className='h-10 w-[28rem] rounded-lg border border-[#d6d6d6] px-2.5 outline-none md:w-full md:text-sm'*/}
+            {/*          />*/}
+            {/*        )}*/}
+            {/*      </Checkbox>*/}
+            {/*    ))}*/}
+            {/*  </div>*/}
+            {/*))}*/}
+            {/*/!* 문항 3~9 *!/*/}
 
-            {/* 문항 10 */}
-            <div className='space-y-7 border-b border-dotted border-[#d6d6d6] py-12 md:h-[12rem] md:flex-col md:justify-center md:space-y-6 md:py-4'>
-              <div className='text-xl font-medium md:text-sm md:font-bold md:tracking-tighter'>
-                {text.certificate['79']}{' '}
-                <span className='text-[#2fb6bc]'>*</span>
-              </div>
+            {/*/!* 문항 10 *!/*/}
+            {/*<div className='space-y-7 border-b border-dotted border-[#d6d6d6] py-12 md:h-[12rem] md:flex-col md:justify-center md:space-y-6 md:py-4'>*/}
+            {/*  <div className='text-xl font-medium md:text-sm md:font-bold md:tracking-tighter'>*/}
+            {/*    {text.certificate['79']}{' '}*/}
+            {/*    <span className='text-[#2fb6bc]'>*</span>*/}
+            {/*  </div>*/}
 
-              <div className='space-y-5 md:w-full md:justify-between'>
-                {[
-                  text.certificate['80'],
-                  text.certificate['81'],
-                  text.certificate['82'],
-                ].map((i, index) => (
-                  <div key={i} className='flex items-center space-x-4'>
-                    <input
-                      type='radio'
-                      value={index + 1}
-                      {...register('Q10', {
-                        required: '항목을 선택해주세요',
-                      })}
-                      className={cls(
-                        errors?.Q10?.message
-                          ? 'bg-[url("/icons/checked-error.png")]'
-                          : 'bg-[url("/icons/unchecked.png")] checked:bg-[url("/icons/checked.png")]',
-                        'h-2.5 w-3.5 cursor-pointer appearance-none bg-cover bg-no-repeat outline-none md:bg-contain'
-                      )}
-                    />
+            {/*  <div className='space-y-5 md:w-full md:justify-between'>*/}
+            {/*    {[*/}
+            {/*      text.certificate['80'],*/}
+            {/*      text.certificate['81'],*/}
+            {/*      text.certificate['82'],*/}
+            {/*    ].map((i, index) => (*/}
+            {/*      <div key={i} className='flex items-center space-x-4'>*/}
+            {/*        <input*/}
+            {/*          type='radio'*/}
+            {/*          value={index + 1}*/}
+            {/*          {...register('Q10', {*/}
+            {/*            required: '항목을 선택해주세요',*/}
+            {/*          })}*/}
+            {/*          className={cls(*/}
+            {/*            errors?.Q10?.message*/}
+            {/*              ? 'bg-[url("/icons/checked-error.png")]'*/}
+            {/*              : 'bg-[url("/icons/unchecked.png")] checked:bg-[url("/icons/checked.png")]',*/}
+            {/*            'h-2.5 w-3.5 cursor-pointer appearance-none bg-cover bg-no-repeat outline-none md:bg-contain'*/}
+            {/*          )}*/}
+            {/*        />*/}
 
-                    <div className='text-lg md:text-sm'>{i}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            {/* 문항 10 */}
+            {/*        <div className='text-lg md:text-sm'>{i}</div>*/}
+            {/*      </div>*/}
+            {/*    ))}*/}
+            {/*  </div>*/}
+            {/*</div>*/}
+            {/*/!* 문항 10 *!/*/}
 
-            {/* 문항 11 */}
-            <div className='space-y-7 py-12 md:h-[12rem] md:flex-col md:justify-center md:space-y-6 md:py-4'>
-              <div className='text-xl font-medium md:text-sm md:tracking-tighter'>
-                {text.certificate['83']}{' '}
-                <span className='text-[#2fb6bc]'>*</span>
-              </div>
+            {/*/!* 문항 11 *!/*/}
+            {/*<div className='space-y-7 py-12 md:h-[12rem] md:flex-col md:justify-center md:space-y-6 md:py-4'>*/}
+            {/*  <div className='text-xl font-medium md:text-sm md:tracking-tighter'>*/}
+            {/*    {text.certificate['83']}{' '}*/}
+            {/*    <span className='text-[#2fb6bc]'>*</span>*/}
+            {/*  </div>*/}
 
-              <div className='space-y-5 md:w-full md:justify-between'>
-                {[text.certificate['84'], text.certificate['85']].map(
-                  (i, index) => (
-                    <div key={i} className='flex items-center space-x-4'>
-                      <input
-                        type='radio'
-                        value={index + 1}
-                        {...register('Q11', {
-                          required: '항목을 선택해주세요',
-                        })}
-                        className={cls(
-                          errors?.Q11?.message
-                            ? 'bg-[url("/icons/checked-error.png")]'
-                            : 'bg-[url("/icons/unchecked.png")] checked:bg-[url("/icons/checked.png")]',
-                          'h-2.5 w-3.5 cursor-pointer appearance-none bg-cover bg-no-repeat outline-none md:bg-contain'
-                        )}
-                      />
+            {/*  <div className='space-y-5 md:w-full md:justify-between'>*/}
+            {/*    {[text.certificate['84'], text.certificate['85']].map(*/}
+            {/*      (i, index) => (*/}
+            {/*        <div key={i} className='flex items-center space-x-4'>*/}
+            {/*          <input*/}
+            {/*            type='radio'*/}
+            {/*            value={index + 1}*/}
+            {/*            {...register('Q11', {*/}
+            {/*              required: '항목을 선택해주세요',*/}
+            {/*            })}*/}
+            {/*            className={cls(*/}
+            {/*              errors?.Q11?.message*/}
+            {/*                ? 'bg-[url("/icons/checked-error.png")]'*/}
+            {/*                : 'bg-[url("/icons/unchecked.png")] checked:bg-[url("/icons/checked.png")]',*/}
+            {/*              'h-2.5 w-3.5 cursor-pointer appearance-none bg-cover bg-no-repeat outline-none md:bg-contain'*/}
+            {/*            )}*/}
+            {/*          />*/}
 
-                      <div className='text-lg md:text-sm'>{i}</div>
-                    </div>
-                  )
-                )}
-              </div>
-            </div>
-            {/* 문항 11 */}
+            {/*          <div className='text-lg md:text-sm'>{i}</div>*/}
+            {/*        </div>*/}
+            {/*      )*/}
+            {/*    )}*/}
+            {/*  </div>*/}
+            {/*</div>*/}
+            {/*/!* 문항 11 *!/*/}
 
             {/* 제출하기 */}
             <div className='flex justify-center'>
