@@ -1,6 +1,6 @@
 import SEO from '@components/seo';
 import type { NextPage } from 'next';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import { usersApi } from '@libs/api';
 import useMutation from '@libs/client/useMutation';
 import { FieldErrors, useForm } from 'react-hook-form';
@@ -55,7 +55,6 @@ const SignUp: NextPage = () => {
     mode: 'onChange',
   });
   const onValid = async ({
-    stage,
     username,
     password,
     korName,
@@ -63,14 +62,13 @@ const SignUp: NextPage = () => {
     year,
     month,
     day,
-    country,
     email,
     phoneNum,
     adAgree,
   }: IForm) => {
     const req = {
       local,
-      stage,
+      stage: 1,
       username,
       password,
       korName,
@@ -78,7 +76,7 @@ const SignUp: NextPage = () => {
       year,
       month,
       day,
-      country,
+      country: '대한민국',
       email,
       phoneNum,
       adAgree,
@@ -111,6 +109,9 @@ const SignUp: NextPage = () => {
       setCode((prev) => ({ ...prev, loading: false }));
     }
   };
+
+  useEffect(() => { setLocal(true); }, []);
+
   return (
     <>
       <SEO title='회원가입' />
@@ -131,75 +132,11 @@ const SignUp: NextPage = () => {
           </h1>
 
           {local === null ? (
-            <div>
-              {/* 가입유형 */}
-              <div className='mt-4 text-center text-lg font-medium text-[#6b6b6b] md:text-base'>
-                {text.signup['36']}
-              </div>
-
-              <div className='mt-10 flex space-x-5 md:mt-8 md:flex-col md:space-x-0 md:space-y-5'>
-                <div
-                  onClick={() => setLocal(true)}
-                  className='flex h-[12.7rem] w-[17.5rem] cursor-pointer flex-col items-center justify-center space-y-4 rounded-lg border border-[#2fb6bc] transition-all hover:opacity-70'
-                >
-                  <Local />
-                  <div className='text-lg font-medium text-[#2fb6bc]'>
-                    {text.signup['37']}
-                  </div>
-                </div>
-                <div
-                  onClick={() => setLocal(false)}
-                  className='flex h-[12.7rem] w-[17.5rem] cursor-pointer flex-col items-center justify-center space-y-2.5 rounded-lg border border-[#2fb6bc] transition-all hover:opacity-70'
-                >
-                  <NotLocal />
-                  <div className='text-lg font-medium text-[#2fb6bc]'>
-                    {text.signup['38']}
-                  </div>
-                </div>
-              </div>
-              {/* 가입유형 */}
-            </div>
+            <div style={{height: '1000px'}}/>
           ) : (
             <>
               {/* Input 필드 */}
               <div className='mt-12 w-full space-y-8 md:mt-7 md:space-y-5'>
-                {/* 가입유형 */}
-                <div className='flex w-full flex-col'>
-                  <label className='font-medium md:text-[0.938rem]'>
-                    {text.signup['2']}
-                  </label>
-
-                  <div className='mt-5 flex w-full space-x-16 md:mt-4 md:space-x-6'>
-                    {[1, 2, 3, 4].map((i) => (
-                      <div key={i} className='flex items-center space-x-1.5'>
-                        <input
-                          type='radio'
-                          value={i}
-                          {...register('stage', {
-                            required: text.signupError['2'],
-                          })}
-                          className={cls(
-                            errors?.stage?.message
-                              ? 'border-red-500'
-                              : 'border-[#d6d6d6]',
-                            'h-6 w-6 cursor-pointer appearance-none rounded-full border-2 bg-cover outline-none checked:border-none checked:bg-[url("/icons/radio-checked.png")] md:h-5 md:w-5'
-                          )}
-                        />
-
-                        <div className='text-lg md:text-[0.938rem]'>
-                          {i}
-                          {text.signup['3']}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className='mt-2 text-sm text-red-500'>
-                    {errors?.stage?.message && text.signupError['2']}
-                  </div>
-                </div>
-                {/* 가입유형 */}
-
                 {/* 아이디 */}
                 <Input
                   type='text'
@@ -433,17 +370,6 @@ const SignUp: NextPage = () => {
                   </div>
                 </div>
                 {/* 생년월일 */}
-
-                {/* 국가 */}
-                <Input
-                  type='text'
-                  label={text.signup['18']}
-                  register={register('country', {
-                    required: text.signupError['22'],
-                  })}
-                  error={errors?.country?.message}
-                />
-                {/* 국가 */}
 
                 {/* 이메일 */}
                 <Input

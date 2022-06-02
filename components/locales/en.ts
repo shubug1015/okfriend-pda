@@ -504,8 +504,8 @@ export const en = {
   // 로그인
   login: {
     '1': 'Log In',
-    '2': 'Email',
-    '3': 'Email',
+    '2': 'ID',
+    '3': 'ID',
     '4': 'Password',
     '5': 'Password',
     '6': 'Log In',
