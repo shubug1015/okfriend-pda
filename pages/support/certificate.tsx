@@ -100,12 +100,12 @@ const Certificate: NextPage = () => {
     console.log(errors);
   };
 
-  // useEffect(() => {
-  //   if (data === 'there are uncompleted lectures') {
-  //     alert('미완료된 강의가 있습니다.');
-  //     router.back();
-  //   }
-  // }, [data]);
+  useEffect(() => {
+    if (data === 'there are uncompleted lectures') {
+      alert('미완료된 강의가 있습니다.');
+      router.back();
+    }
+  }, [data]);
 
   return (
     <>
@@ -179,7 +179,7 @@ const Certificate: NextPage = () => {
                     <div className='text-lg md:grow md:text-sm'>{i}</div>
 
                     {i === text.certificate['20'] && (
-                      <input
+                      <textarea
                         type='text'
                         {...register('Q1_etc')}
                         readOnly={watch('Q1') !== text.certificate['20']}
@@ -189,6 +189,7 @@ const Certificate: NextPage = () => {
                             : '',
                           'h-10 w-[12rem] rounded-lg border border-[#d6d6d6] px-2.5 outline-none'
                         )}
+                        style={{height: '100px', width: '70%'}}
                       />
                     )}
                   </div>
