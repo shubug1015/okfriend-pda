@@ -180,7 +180,6 @@ const Certificate: NextPage = () => {
 
                     {i === text.certificate['20'] && (
                       <textarea
-                        type='text'
                         {...register('Q1_etc')}
                         readOnly={watch('Q1') !== text.certificate['20']}
                         className={cls(
@@ -369,4 +368,3 @@ const Certificate: NextPage = () => {
 };
 
 export default Certificate;
-{/* to trigger vercel */}
