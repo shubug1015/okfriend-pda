@@ -67,6 +67,7 @@ const ResetPw: NextPage = () => {
         setCode((prev) => ({ ...prev, loading: false }));
       } else {
         setCode({ sended: true, loading: false });
+        alert('인증번호가 발송되었습니다. 메일을 확인해주세요.');
       }
     } catch {
       alert('Error');
@@ -146,7 +147,7 @@ const ResetPw: NextPage = () => {
                       !errors?.email?.message
                       ? 'cursor-pointer transition-all hover:opacity-70'
                       : '',
-                    'ml-4 flex h-full w-[7.5rem] items-center justify-center rounded border border-[#2fb6bc] text-sm font-medium text-[#2fb6bc] md:ml-2 md:w-24'
+                    'ml-4 flex h-full w-[7.5rem] items-center justify-center rounded border border-[#2fb6bc] text-sm font-medium text-[#2fb6bc] md:w-32 md:text-xs'
                   )}
                 >
                   {code.loading ? (
