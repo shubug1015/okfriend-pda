@@ -224,14 +224,14 @@ export default function Popup() {
           {data?.profile?.birth.split('-')[2].padStart(2, '0')}
         </div>
 
-        <div className='absolute right-[10.5rem] top-0 translate-y-[143.5mm] text-2xl font-bold'>
+        <div className='absolute right-[10.7rem] top-0 translate-y-[143.5mm] text-2xl font-bold'>
           {data?.profile?.stage === 1
-            ? '(2022.07.01~07.31)'
+            ? '2022.07.01~07.31'
             : data?.profile?.stage === 2
-            ? '(2022.08.01~08.30)'
+            ? '2022.08.01~08.30'
             : data?.profile?.stage === 3
-            ? '(2022.09.01~09.30)'
-            : '(2022.10.01~10.31)'}
+            ? '2022.09.01~09.30'
+            : '2022.10.01~10.31'}
         </div>
 
         <div className='absolute left-1/2 top-0 translate-y-[200mm] -translate-x-1/2 text-xl font-bold'>
