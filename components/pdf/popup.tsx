@@ -65,9 +65,9 @@ export default function Popup() {
         const formData = new FormData();
         formData.append('certificate', blob);
 
-        // await surveyApi.sendCertificate(formData, data?.token as string);
-        // pdf.output('dataurlnewwindow');
-        pdf.save('download.pdf');
+        await surveyApi.sendCertificate(formData, data?.token as string);
+        // // pdf.output('dataurlnewwindow');
+        // pdf.save('download.pdf');
       });
 
       alert('이수증 발급이 완료되었습니다. 메일을 확인해주세요.');
