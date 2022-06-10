@@ -9,6 +9,7 @@ import { FieldErrors, useForm } from 'react-hook-form';
 import useSWR from 'swr';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { useLocale } from '@libs/client/useLocale';
+import { isMobile } from 'react-device-detect';
 
 interface IForm {
   type: string;
@@ -36,46 +37,51 @@ const popupVar = {
 };
 
 export default function Popup() {
+  console.log(isMobile);
   const { locale, text } = useLocale();
   const { data } = useSWR<IUser>('/api/user');
   const [loading, setLoading] = useState(false);
 
   const downloadPdf = async (type: string) => {
     setLoading(true);
-    try {
-      const pdfElId = type === '영문' ? '#pdfEn' : '#pdfKo';
-      const pdfEl = document.querySelector(pdfElId) as HTMLElement;
+    if (isMobile) {
+      alert('이수증 발급은 pc를 이용해주세요');
+    } else {
+      try {
+        const pdfElId = type === '영문' ? '#pdfEn' : '#pdfKo';
+        const pdfEl = document.querySelector(pdfElId) as HTMLElement;
 
-      await html2canvas(pdfEl, {
-        onclone: (clonedDoc) => {
-          const clonedPdfEl = clonedDoc.querySelector(pdfElId) as HTMLElement;
-          clonedPdfEl.style.display = 'block';
-        },
-      }).then(async (canvas) => {
+        await html2canvas(pdfEl, {
+          onclone: (clonedDoc) => {
+            const clonedPdfEl = clonedDoc.querySelector(pdfElId) as HTMLElement;
+            clonedPdfEl.style.display = 'block';
+          },
+        }).then(async (canvas) => {
+          setLoading(false);
+          const imgData = canvas.toDataURL('image/png');
+
+          const pdf = new jsPDF();
+          const pdfWidth = 210;
+          const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+          pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, '', 'FAST');
+
+          const blob = pdf.output('blob');
+          const formData = new FormData();
+          formData.append('certificate', blob);
+
+          await surveyApi.sendCertificate(formData, data?.token as string);
+          // // pdf.output('dataurlnewwindow');
+          // pdf.save('download.pdf');
+        });
+
+        alert('이수증 발급이 완료되었습니다. 메일을 확인해주세요.');
+        window.location.reload();
+      } catch {
+        alert('Error');
+      } finally {
         setLoading(false);
-        const imgData = canvas.toDataURL('image/png');
-
-        const pdf = new jsPDF();
-        const pdfWidth = 210;
-        const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-
-        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, '', 'FAST');
-
-        const blob = pdf.output('blob');
-        const formData = new FormData();
-        formData.append('certificate', blob);
-
-        await surveyApi.sendCertificate(formData, data?.token as string);
-        // // pdf.output('dataurlnewwindow');
-        // pdf.save('download.pdf');
-      });
-
-      alert('이수증 발급이 완료되었습니다. 메일을 확인해주세요.');
-      window.location.reload();
-    } catch {
-      alert('Error');
-    } finally {
-      setLoading(false);
+      }
     }
   };
 
