@@ -214,7 +214,7 @@ export default function Popup() {
           22OKF-A{(data?.profile?.id + '').padStart(4, '000')}
         </div>
 
-        <div className='absolute right-12 top-0 w-40 translate-y-[86.9mm] text-lg font-bold'>
+        <div className='absolute right-12 top-0 w-40 translate-y-[87.1mm] text-lg font-bold'>
           {data?.profile?.name}
         </div>
 
@@ -224,7 +224,7 @@ export default function Popup() {
           {data?.profile?.birth.split('-')[2].padStart(2, '0')}
         </div>
 
-        <div className='absolute right-[12.3rem] top-0 translate-y-[143.7mm] text-2xl font-bold'>
+        <div className='absolute right-[10.5rem] top-0 translate-y-[143.5mm] text-2xl font-bold'>
           {data?.profile?.stage === 1
             ? '(2022.07.01~07.31)'
             : data?.profile?.stage === 2
