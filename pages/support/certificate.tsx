@@ -82,24 +82,24 @@ const Certificate: NextPage = () => {
   });
 
   const onValid = async ({ Q1_etc, Q8_5_etc, ...data }: IForm) => {
-    if (isMobile) {
-      alert('이수증 발급은 pc를 이용해주세요');
-    } else {
-      try {
-        await surveyApi.certificateSurvey(
-          {
-            ...data,
-            Q1: data.Q1 === text.certificate['20'] ? Q1_etc : data.Q1,
-            Q8_5: `${Q8_5_etc} ${data.Q8_5}`,
-          },
-          token as string
-        );
-        alert('제출이 완료되었습니다');
-        setPopup(true);
-      } catch {
-        alert('Error');
-      }
+    // if (isMobile) {
+    //   alert('이수증 발급은 pc를 이용해주세요');
+    // } else {
+    try {
+      await surveyApi.certificateSurvey(
+        {
+          ...data,
+          Q1: data.Q1 === text.certificate['20'] ? Q1_etc : data.Q1,
+          Q8_5: `${Q8_5_etc} ${data.Q8_5}`,
+        },
+        token as string
+      );
+      alert('제출이 완료되었습니다');
+      setPopup(true);
+    } catch {
+      alert('Error');
     }
+    // }
   };
   const onInvalid = (errors: FieldErrors) => {
     console.log(errors);
