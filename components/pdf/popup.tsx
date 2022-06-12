@@ -67,10 +67,10 @@ export default function Popup() {
         const formData = new FormData();
         formData.append('certificate', blob);
 
-        await surveyApi.sendCertificate(formData, data?.token as string);
+        // await surveyApi.sendCertificate(formData, data?.token as string);
 
-        // // pdf.output('dataurlnewwindow');
-        // pdf.save('download.pdf');
+        // pdf.output('dataurlnewwindow');
+        pdf.save('download.pdf');
       });
 
       alert('이수증 발급이 완료되었습니다. 메일을 확인해주세요.');
@@ -191,11 +191,11 @@ export default function Popup() {
             22OKF-A{(data?.profile?.id + '').padStart(4, '000')}
           </div>
 
-          <div className='absolute left-1/2 top-0 translate-y-[100.5mm] -translate-x-1/2 font-montserrat text-2xl font-bold text-[#292E31]'>
+          <div className='absolute left-1/2 top-0 translate-y-[100.8mm] -translate-x-1/2 font-montserrat text-2xl font-bold text-[#292E31]'>
             {data?.profile?.en_name}
           </div>
 
-          <div className='absolute left-1/2 top-0 translate-y-[156.5mm] -translate-x-1/2 font-montserrat text-[1.75rem] font-bold text-[#292E31]'>
+          {/* <div className='absolute left-1/2 top-0 translate-y-[156.5mm] -translate-x-1/2 font-montserrat text-[1.75rem] font-bold text-[#292E31]'>
             {data?.profile?.stage === 1
               ? 'July 1st-31th, 2022'
               : data?.profile?.stage === 2
@@ -203,7 +203,7 @@ export default function Popup() {
               : data?.profile?.stage === 3
               ? 'September 1st-30th, 2022'
               : 'October 1st-30th, 2022'}
-          </div>
+          </div> */}
 
           <div className='absolute left-1/2 top-0 translate-y-[195mm] -translate-x-1/2 font-montserrat text-2xl text-[#292E31]'>
             {new Date().getFullYear()}.
@@ -226,17 +226,17 @@ export default function Popup() {
             22OKF-A{(data?.profile?.id + '').padStart(4, '000')}
           </div>
 
-          <div className='absolute right-12 top-0 w-40 translate-y-[87.1mm] text-lg font-bold'>
+          <div className='absolute right-12 top-0 w-40 translate-y-[87.2mm] text-lg font-bold'>
             {data?.profile?.name}
           </div>
 
-          <div className='absolute right-12 top-0 w-40 translate-y-[95.7mm] text-lg font-bold'>
+          <div className='absolute right-12 top-0 w-40 translate-y-[95.9mm] text-lg font-bold'>
             {data?.profile?.birth.split('-')[0]}.
             {data?.profile?.birth.split('-')[1].padStart(2, '0')}.
             {data?.profile?.birth.split('-')[2].padStart(2, '0')}
           </div>
 
-          <div className='absolute right-[10.7rem] top-0 translate-y-[143.5mm] text-2xl font-bold'>
+          {/* <div className='absolute right-[10.7rem] top-0 translate-y-[143.5mm] text-2xl font-bold'>
             {data?.profile?.stage === 1
               ? '2022.07.01~07.31'
               : data?.profile?.stage === 2
@@ -244,7 +244,7 @@ export default function Popup() {
               : data?.profile?.stage === 3
               ? '2022.09.01~09.30'
               : '2022.10.01~10.31'}
-          </div>
+          </div> */}
 
           <div className='absolute left-1/2 top-0 translate-y-[200mm] -translate-x-1/2 text-xl font-bold'>
             {new Date().getFullYear()}년 {new Date().getMonth() + 1}월{' '}
