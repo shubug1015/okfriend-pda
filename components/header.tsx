@@ -395,12 +395,12 @@ export default function Header() {
                       className='mx-auto flex h-14 max-w-[254px] items-center justify-between'
                     >
                       <div
-                        onClick={() => {
-                          if (i.id === 1) {
-                            router.push('/course');
-                            setMobileMenuOpened(false);
-                          }
-                        }}
+                        // onClick={() => {
+                        //   if (i.id === 1) {
+                        //     router.push('/course');
+                        //     setMobileMenuOpened(false);
+                        //   }
+                        // }}
                         className='font-medium text-[#6b6b6b]'
                       >
                         {i.title}
