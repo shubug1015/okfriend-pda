@@ -38,9 +38,9 @@ const Course: NextPage<IProps> = ({ params }) => {
   );
   const navList = [
     text.preCourseHeader['2'],
-    courseType === 'pre-online'
-      ? text.preCourseHeader['3']
-      : text.courseHeader['3'],
+    // courseType === 'pre-online'
+    //   ? text.preCourseHeader['3']
+    //   : text.courseHeader['3'],
     courseCategory === 'live'
       ? 'LIVE 차시'
       : courseCategory === 'required'
